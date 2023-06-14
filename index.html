@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markpad</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="icon" href="icon.png">
+    <style>
+        /* Add your custom CSS styles here */
+        #preview-container {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <div class="menu">
+            <span>File</span>
+            <div class="dropdown-content">
+                <a href="#" id="new-btn">New</a>
+                <a href="#" id="open-btn">Open</a>
+                <a href="#" id="save-btn">Save</a>
+            </div>
+        </div>
+        <div class="menu">
+            <span>Edit</span>
+            <div class="dropdown-content">
+                <a href="#" id="cut-option">Cut</a>
+                <a href="#" id="copy-option">Copy</a>
+                <a href="#" id="paste-option">Paste</a>
+            </div>
+        </div>
+        <div class="menu">
+            <span>View</span>
+            <div class="dropdown-content">
+                <a href="#" id="zoom-in-option">Zoom In</a>
+                <a href="#" id="zoom-out-option">Zoom Out</a>
+                <a href="#" id="reset-zoom-option">Reset Zoom</a>
+                <a href="#" id="dark-mode-toggle">Dark Mode</a>
+                <a href="#" id="view-mode-toggle">Edit Mode</a>
+            </div>
+        </div>
+    </div>
+    <div class="notepad">
+        <textarea id="textarea"></textarea>
+        <div id="preview-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
