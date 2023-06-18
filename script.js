@@ -1,9 +1,6 @@
-var editorContainer = document.getElementById('editorContainer');
 var previewContainer = document.getElementById('previewContainer');
 var editor = document.getElementById('editor');
 var preview = document.getElementById('preview');
-var toggleBtn = document.getElementById('toggleBtn');
-var saveBtn = document.getElementById('saveBtn');
 var editMode = true;
 
 function convertMarkdownToHtml(markdownText) {
@@ -59,3 +56,17 @@ function saveAs() {
 }
 
 editor.addEventListener('input', updatePreview);
+
+function loadFile(event) {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+  
+    reader.onload = function(e) {
+      var contents = e.target.result;
+      editor.value = contents;
+      updatePreview();
+    };
+  
+    reader.readAsText(file);
+  }
+  

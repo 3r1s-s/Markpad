@@ -13,9 +13,14 @@
     <div class="toolbar-item">
         <button id="saveBtn" class="tool" onclick="saveAs()">Save As</button>
     </div>
+    <div class="toolbar-item">
+        <input id="loadBtn" class="tool" type="file" accept=".md" onchange="loadFile(event)" style="display: none;">
+        <button class="tool" onclick="document.getElementById('loadBtn').click()">Load</button>
+    </div>
+    
   </div>
   <div id="editorContainer" class="main">
-    <textarea id="editor" class="editor" rows="10" placeholder="Type your markdown text here"></textarea>
+    <textarea id="editor" class="editor" rows="10" placeholder=""></textarea>
   </div>
   <div id="previewContainer" style="display: none;" class="main">
     <div id="preview"class="editor" ></div>
