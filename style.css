@@ -8,6 +8,7 @@ body {
 
 .toolbar {
 	background-color: #333;
+    display: flex;
 }
 
 .editor {
@@ -57,4 +58,10 @@ body {
 	display: inline-block;
 	position: relative;
 	padding: 5px;
+}
+
+#filenameInput {
+    outline: none;
+    height: auto;
+    cursor: text;
 }

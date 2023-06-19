@@ -11,13 +11,15 @@
         <button id="toggleBtn" class="tool" onclick="toggleMode()">View</button>
     </div>
     <div class="toolbar-item">
-        <button id="saveBtn" class="tool" onclick="saveAs()">Save As</button>
+        <button id="saveBtn" class="tool" onclick="saveAs()">Save</button>
     </div>
     <div class="toolbar-item">
         <input id="loadBtn" class="tool" type="file" accept=".md" onchange="loadFile(event)" style="display: none;">
         <button class="tool" onclick="document.getElementById('loadBtn').click()">Load</button>
     </div>
-    
+    <div class="toolbar-item">
+        <input id="filenameInput" class="tool" type="text" placeholder="Enter filename">
+    </div>    
   </div>
   <div id="editorContainer" class="main">
     <textarea id="editor" class="editor" rows="10" placeholder=""></textarea>

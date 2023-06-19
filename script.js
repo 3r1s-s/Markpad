@@ -44,16 +44,18 @@ function toggleMode() {
 }
 
 function saveAs() {
-  var markdownText = editor.value;
-  var filename = "note.md";
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(markdownText));
-  element.setAttribute('download', filename);
-  element.style.display = 'none';
-  document.body.appendChild(element);
-  element.click();
-  document.body.removeChild(element);
-}
+    var markdownText = editor.value;
+    var filenameInput = document.getElementById('filenameInput');
+    var filename = filenameInput.value || "note.md";
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(markdownText));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+  
 
 editor.addEventListener('input', updatePreview);
 
@@ -65,8 +67,12 @@ function loadFile(event) {
       var contents = e.target.result;
       editor.value = contents;
       updatePreview();
+  
+      var filenameInput = document.getElementById('filenameInput');
+      filenameInput.value = file.name;
     };
   
     reader.readAsText(file);
   }
+      
   
