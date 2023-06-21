@@ -47,7 +47,7 @@ function toggleMode() {
 function saveAs() {
 	var markdownText = editor.value;
 	var filenameInput = document.getElementById('filenameInput');
-	var filename = filenameInput.value || "note.md";
+	var filename = filenameInput.value || "untitled.md";
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(markdownText));
 	element.setAttribute('download', filename);
@@ -57,6 +57,14 @@ function saveAs() {
 	document.body.removeChild(element);
 }
 editor.addEventListener('input', updatePreview);
+
+document.addEventListener('keydown', function(event) {
+	if (event.ctrlKey && event.key === 's') {
+	  event.preventDefault();
+	  saveAs();
+	}
+  });
+  
 
 function loadFile(event) {
 	var file = event.target.files[0];
