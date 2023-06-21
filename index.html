@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Markpad</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="icon.png">
+	<title>Markpad</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="icon.png">
 </head>
+
 <body>
-  <div class="toolbar">
-    <div class="toolbar-item">
-        <button id="toggleBtn" class="tool" onclick="toggleMode()">View</button>
-    </div>
-    <div class="toolbar-item">
-        <button id="saveBtn" class="tool" onclick="saveAs()">Save</button>
-    </div>
-    <div class="toolbar-item">
-        <input id="loadBtn" class="tool" type="file" accept=".md" onchange="loadFile(event)" style="display: none;">
-        <button class="tool" onclick="document.getElementById('loadBtn').click()">Load</button>
-    </div>
-    <div class="toolbar-item">
-        <input id="filenameInput" class="tool" type="text" placeholder="Enter filename">
-    </div>    
-  </div>
-  <div id="editorContainer" class="main">
-    <textarea id="editor" class="editor" rows="10" placeholder=""></textarea>
-  </div>
-  <div id="previewContainer" style="display: none;" class="main">
-    <div id="preview"class="editor" ></div>
-  </div>
-  
-  <script src="script.js"></script>
+	<div class="toolbar">
+		<div class="toolbar-item"><button id="toggleBtn" class="tool" onclick="toggleMode()">View</button></div>
+		<div class="toolbar-item"><button id="saveBtn" class="tool" onclick="saveAs()">Save</button></div>
+		<div class="toolbar-item"><button id="clearBtn" class="tool" onclick="newDoc()">New</button></div>
+		<div class="toolbar-item"><input id="loadBtn" class="tool" type="file" accept=".md" onchange="loadFile(event)" style="display: none;"><button class="tool" onclick="document.getElementById('loadBtn').click()">Load</button></div>
+		<div class="toolbar-item"><input id="filenameInput" class="tool" type="text" placeholder="Untitled"></div>
+	</div>
+	<div id="editorContainer" class="main">
+		<textarea id="editor" class="editor" rows="10" placeholder=""></textarea>
+	</div>
+	<div id="previewContainer" style="display: none;" class="main">
+		<div id="preview" class="editor"></div>
+	</div>
+	<script src="script.js"></script>
 </body>
+
 </html>
