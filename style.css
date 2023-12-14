@@ -46,7 +46,7 @@ code {
 }
 
 #preview {
-	overflow: hidden;
+	overflow-y: scroll;
 }
 
 .tool {
@@ -84,4 +84,9 @@ code {
 	outline: none;
 	height: auto;
 	cursor: text;
+}
+
+#filenameInput:focus {
+	background-color: #555;
+	filter: drop-shadow(0px 5px 5px #00000050);
 }
