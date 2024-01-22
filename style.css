@@ -12,6 +12,10 @@ code {
 	border-radius: 5px;
 }
 
+li {
+	margin-left: 10px;
+}
+
 .toolbar {
 	background-color: #333;
 	display: flex;
